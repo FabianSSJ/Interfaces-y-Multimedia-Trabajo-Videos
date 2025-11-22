@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Progresivo Multiresolución</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Reproductor de Video Progresivo</h2>
+
+        <video controls preload="metadata" poster="poster.jpg">
+            <!-- Mayor calidad -->
+            <source src="video_720p.mp4" type="video/mp4">
+
+            <!-- Calidad media -->
+            <source src="video_480p.mp4" type="video/mp4">
+
+            <!-- Calidad baja -->
+            <source src="video_240p.mp4" type="video/mp4">
+
+            <!-- Subtítulos WebVTT (opcional pero recomendado) -->
+            <track kind="captions" src="subs.vtt" srclang="es" label="Español" default>
+        </video>
+    </div>
+</body>
+</html>
